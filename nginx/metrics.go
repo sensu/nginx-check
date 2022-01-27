@@ -23,9 +23,9 @@ var (
 	labelHost = "host"
 	labelPort = "port"
 
-	line1Regex = regexp.MustCompile("^Active connections: (\\d+)$")
-	line3Regex = regexp.MustCompile("^(\\d+)\\s+(\\d+)\\s+(\\d+)$")
-	line4Regex = regexp.MustCompile("^Reading:\\s+(\\d+)\\s+Writing:\\s+(\\d+)\\s+Waiting:\\s+(\\d+)$")
+	line1Regex = regexp.MustCompile(`^Active connections: (\d+)$`)
+	line3Regex = regexp.MustCompile(`^(\d+)\s+(\d+)\s+(\d+)$`)
+	line4Regex = regexp.MustCompile(`^Reading:\s+(\d+)\s+Writing:\s+(\d+)\s+Waiting:\s+(\d+)$`)
 
 	metricHelp = map[string]*MetricDesc{
 		"nginx_active":   {"number of active connections", dto.MetricType_GAUGE},

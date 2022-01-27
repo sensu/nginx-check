@@ -71,7 +71,7 @@ func TestLoadData(t *testing.T) {
 	t.Run("request timeout", func(t *testing.T) {
 		start := time.Now()
 		data, err := loadData(testServer.URL+"/sleep", 1*time.Second)
-		timeDelta := time.Now().Sub(start)
+		timeDelta := time.Since(start)
 		// the /sleep url waits 10 seconds before returning. anything bellow 8 seconds is fine
 		assert.Error(t, err)
 		assert.Nil(t, data)
